@@ -2,7 +2,7 @@
 
 ## Installation
 
-* ``` https://github.com/jatsqi/E-Portfolio-Room.git ```
+* ``` git clone https://github.com/jatsqi/E-Portfolio-Room.git ```
 * Open project in Android Studio
 * Build
 * Run with Emulator or physical device
