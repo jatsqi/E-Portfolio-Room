@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jatsqi.todo.R
 import com.jatsqi.todo.db.entity.TodoItem
+import com.jatsqi.todo.util.setStrikeThruVisibility
 
 class TodoListAdapter(private val onItemDoneClick: (TodoItem) -> Unit) :
     RecyclerView.Adapter<TodoListAdapter.TodoViewHolder>() {
@@ -31,7 +32,7 @@ class TodoListAdapter(private val onItemDoneClick: (TodoItem) -> Unit) :
         val item = todoItems[position]
 
         holder.textView.text = item.text
-        setTextStrikeThruEffect(holder.textView, item.done)
+        holder.textView.setStrikeThruVisibility(item.done)
 
         holder.doneCheckBox.isChecked = item.done
         holder.doneCheckBox.setOnClickListener {
@@ -46,13 +47,4 @@ class TodoListAdapter(private val onItemDoneClick: (TodoItem) -> Unit) :
     fun changeItems(items: List<TodoItem>) {
         todoItems = items
     }
-
-    private fun setTextStrikeThruEffect(view: TextView, enable: Boolean) {
-        if (enable) {
-            view.paintFlags = view.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-        } else {
-            view.paintFlags = 0
-        }
-    }
-
 }
