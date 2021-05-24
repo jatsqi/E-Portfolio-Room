@@ -2,7 +2,7 @@
 
 ## Installation
 
-* ``` git clone https://github.com/jatsqi/Todo.git ```
+* ``` https://github.com/jatsqi/E-Portfolio-Room.git ```
 * Open project in Android Studio
 * Build
 * Run with Emulator or physical device
